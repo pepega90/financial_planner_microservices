@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "TransactionService.Protos";
+
+package transaction;
+
+service TransactionService {
+  rpc Transfer (TransferRequest) returns (TransferResponse);
+  rpc TopUp (TopUpRequest) returns (TopUpResponse);
+}
+
+message TransferRequest {
+  string from_wallet_id = 1;
+  string to_wallet_id = 2;
+  double amount = 3;
+}
+
+message TransferResponse {
+  bool success = 1;
+  string message = 2;
+  string transaction_id = 3;
+}
+
+message TopUpRequest {
+  string wallet_id = 1;
+  double amount = 2;
+}
+
+message TopUpResponse {
+  bool success = 1;
+  string message = 2;
+  string transaction_id = 3;
+}
