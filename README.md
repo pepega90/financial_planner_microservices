@@ -25,7 +25,7 @@ Financial Planner Microservices is a comprehensive solution for personal finance
 The application is built using a microservices architecture, consisting of:
 
 - UserService: Handles user account management
-- AccountService: Manages wallets and their balances
+- WalletService: Manages wallets and their balances
 - TransactionService: Processes and stores financial transactions
 
 Each service follows a clean architecture pattern:
@@ -36,18 +36,17 @@ Each service follows a clean architecture pattern:
 
 ## Tech Stack
 
-- .NET 6 / C#
+- .NET 8 / C#
 - Entity Framework Core
 - PostgreSQL
 - Docker
-- MassTransit (for inter-service communication)
-- xUnit (for unit testing)
+- MassTransit RabbitMQ (for inter-service communication)
 
 ## Getting Started
 
 ### Prerequisites
 
-- .NET 6 SDK
+- .NET 8 SDK
 - Docker
 - PostgreSQL
 
@@ -70,7 +69,7 @@ Each service follows a clean architecture pattern:
 
 4. The services will be available at:
    - UserService: http://localhost:5001
-   - AccountService: http://localhost:5002
+   - WalletService: http://localhost:5002
    - TransactionService: http://localhost:5003
 
 ## Testing
