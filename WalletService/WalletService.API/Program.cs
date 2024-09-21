@@ -12,7 +12,8 @@ builder.Services.AddInfra(builder.Configuration);
 builder.Services.AddMessageBroker(
     builder.Configuration,
     Assembly.GetAssembly(typeof(UserCreatedConsumer))!,
-    Assembly.GetAssembly(typeof(WalletInfoConsumer))!
+    Assembly.GetAssembly(typeof(WalletInfoConsumer))!,
+    Assembly.GetAssembly(typeof(TransferConsumer))!
 );
 
 var app = builder.Build();

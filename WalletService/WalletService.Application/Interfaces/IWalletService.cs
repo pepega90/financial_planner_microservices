@@ -9,5 +9,6 @@ namespace WalletService.Application.Interfaces
         Task<Wallet> CreateWallet(CreateWalletDto createWalletDto);
         Task CreateDefaultWalletUser(UserCreatedMessage message);
         Task<List<Wallet>> GetWalletByUserId(Guid userId);
+        Task TransferBetweenWallet(Guid fromWalletId, Guid toWalletId, double amount);
     }
 }

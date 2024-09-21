@@ -25,5 +25,25 @@ namespace WalletService.Application.Services
             var res = await _recordRepo.CreateRecord(record);
             return res;
         }
+
+        public (decimal TotalIncome, decimal TotalExpense) GetCashFlow(DateTime startTime, DateTime endTime)
+        {
+            return _recordRepo.GetCashFlow(startTime, endTime);
+        }
+
+        public Dictionary<string, decimal> GetExpenseRecapByCategory(DateTime startTime, DateTime endTime)
+        {
+            return _recordRepo.GetExpenseRecapByCategory(startTime, endTime);
+        }
+
+        public List<Record> GetLastRecords(int count)
+        {
+            return _recordRepo.GetLastRecords(count);
+        }
+
+        public Task<List<Record>> GetRecordsBetweenDates(Guid walletId, DateTime startTime, DateTime endTime)
+        {
+            return _recordRepo.GetRecordsBetweenDates(walletId, startTime, endTime);
+        }
     }
 }

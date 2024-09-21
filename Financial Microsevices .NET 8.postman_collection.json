@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "f44cef26-3e52-4f80-b9a9-42895a3d7036",
+		"name": "Financial Microsevices .NET 8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28531897"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"dikha\",\r\n    \"email\": \"dikha@handsome.com\",\r\n    \"password\": \"pepega90\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7298/user",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7298",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"aji\",\r\n    \"email\": \"aji@handsome.com\",\r\n    \"password\": \"pepega90\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7298/user",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7298",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Wallet By User Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7298/user/6603f1a9-aeb9-445a-a319-f3a46456876c",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7298",
+							"path": [
+								"user",
+								"6603f1a9-aeb9-445a-a319-f3a46456876c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wallet (Accounts)",
+			"item": [
+				{
+					"name": "Create Wallet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"first wallet\",\r\n    \"balance\": 9.99,\r\n    \"user_id\": \"766a6bda-de25-4d3e-bc70-1f2a6d60e126\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7051/wallet",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7051",
+							"path": [
+								"wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Wallet By User Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"aji\",\r\n    \"email\": \"aji@handsome.com\",\r\n    \"password\": \"pepega90\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7298/user",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7298",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Record",
+			"item": [
+				{
+					"name": "Create Record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wallet_id\": \"acb547da-6786-4b04-9963-89dbee4f6e5d\",\r\n    \"amount\": 500,\r\n    \"type\": \"Expense\",\r\n    \"category_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7051/record",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7051",
+							"path": [
+								"record"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Record Between Dates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7051/record/between-dates?walletId=97ef2a27-04a0-467e-86ad-bfdeb4c47762&startTime=2024-09-01T00:00:00&endTime=2024-09-30T23:59:59",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7051",
+							"path": [
+								"record",
+								"between-dates"
+							],
+							"query": [
+								{
+									"key": "walletId",
+									"value": "97ef2a27-04a0-467e-86ad-bfdeb4c47762"
+								},
+								{
+									"key": "startTime",
+									"value": "2024-09-01T00:00:00"
+								},
+								{
+									"key": "endTime",
+									"value": "2024-09-30T23:59:59"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cash Flow",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7051/record/cash-flow?startTime=2024-09-01T00:00:00&endTime=2024-09-30T23:59:59",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7051",
+							"path": [
+								"record",
+								"cash-flow"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": "2024-09-01T00:00:00"
+								},
+								{
+									"key": "endTime",
+									"value": "2024-09-30T23:59:59"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Expense By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7051/record/expense-recap?startTime=2024-09-01T00:00:00&endTime=2024-09-30T23:59:59",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7051",
+							"path": [
+								"record",
+								"expense-recap"
+							],
+							"query": [
+								{
+									"key": "startTime",
+									"value": "2024-09-01T00:00:00"
+								},
+								{
+									"key": "endTime",
+									"value": "2024-09-30T23:59:59"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transfer",
+			"item": []
+		}
+	]
+}

@@ -19,5 +19,6 @@ namespace WalletService.Domain.Models
     {
         Task<Wallet> CreateWallet(Wallet wallet);
         Task<List<Wallet>> GetWalletByUserId(Guid userId);
+        Task TransferBetweenWallet(Guid fromWalletId, Guid toWalletId, double amount);
     }
 }

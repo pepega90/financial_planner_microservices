@@ -26,5 +26,9 @@ namespace WalletService.Domain.Models
     public interface IRecordRepo
     {
         Task<Record> CreateRecord(Record request);
+        Task<List<Record>> GetRecordsBetweenDates(Guid walletId, DateTime startTime, DateTime endTime);
+        (decimal TotalIncome, decimal TotalExpense) GetCashFlow(DateTime startTime, DateTime endTime);
+        Dictionary<string, decimal> GetExpenseRecapByCategory(DateTime startTime, DateTime endTime);
+        List<Record> GetLastRecords(int count);
     }
 }

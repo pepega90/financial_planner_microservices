@@ -1,9 +1,11 @@
 using SharedService.Messaging.MassTransit;
+using TransactionService.Grpc.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
+builder.Services.AddInfra(builder.Configuration);
 builder.Services.AddMessageBroker(builder.Configuration);
 
 var app = builder.Build();

@@ -43,5 +43,10 @@ namespace WalletService.Application.Services
             var res = await _walletRepo.GetWalletByUserId(userId);
             return res;
         }
+
+        public async Task TransferBetweenWallet(Guid fromWalletId, Guid toWalletId, double amount)
+        {
+            await _walletRepo.TransferBetweenWallet(fromWalletId, toWalletId, amount);
+        }
     }
 }
