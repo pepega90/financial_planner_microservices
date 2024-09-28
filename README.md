@@ -8,7 +8,7 @@ Financial Planner Microservices is a comprehensive solution for personal finance
 
 ## Architecture Diagram
 
-![Microservices Architecture Diagram](https://github.com/pepega90/financial_planner_microservices/blob/main/finan_diag.png)
+![Microservices Architecture Diagram]([https://github.com/pepega90/financial_planner_microservices/blob/main/finan_diag.png])
 
 ## Features
 
