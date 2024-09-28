@@ -6,6 +6,10 @@ A robust, scalable microservices architecture for managing personal finances, in
 
 Financial Planner Microservices is a comprehensive solution for personal finance management. It leverages a microservices architecture to provide a flexible and scalable platform for tracking income, expenses, and financial goals across multiple wallets.
 
+## Architecture Diagram
+
+![Microservices Architecture Diagram](https://github.com/pepega90/financial_planner_microservices/blob/main/finan_diag.png)
+
 ## Features
 
 - **User Management**: Create and manage user accounts
