@@ -13,7 +13,7 @@ namespace UserService.API.Controllers
         {
             _userService = userService;
         }
-
+        
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
@@ -34,6 +34,17 @@ namespace UserService.API.Controllers
             var user = await _userService.GetUserById(id);
             var res = await _userService.GetUserWallet(id);
             return Ok(new { user = user, account = res.Wallets});
+        }
+
+        [HttpGet("me")]
+        public async Task<IActionResult> GetUser(Guid id)
+        {
+            var userId = HttpContext.Items["userId"]!.ToString();
+
+            if (userId == null) return Unauthorized(new { message = "Unauthorized" });
+
+            var user = await _userService.GetUserById(Guid.Parse(userId));
+            return Ok(new { user = user});
         }
     }
 }

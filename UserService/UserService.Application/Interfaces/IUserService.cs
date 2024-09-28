@@ -15,5 +15,6 @@ namespace UserService.Application.Interfaces
         Task<IEnumerable<User>> GetUsers();
         Task<WalletInfoResponse> GetUserWallet(Guid id);
         Task<User> GetUserById(Guid id);
+        Task<string> LoginUser(LoginDto loginDto);
     }
 }

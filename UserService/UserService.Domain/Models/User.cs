@@ -13,5 +13,6 @@
         Task<User> CreateUser(User user);
         Task<User> GetUserBydId(Guid id);
         Task<IEnumerable<User>> GetUsers();
+        Task<string> LoginUser(string email, string password);
     }
 }

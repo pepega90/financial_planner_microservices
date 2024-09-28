@@ -61,5 +61,10 @@ namespace UserService.Application.Services
             var res = await _client.GetResponse<WalletInfoResponse>(new GetWalletInfoMessage { UserId = id });
             return res.Message;
         }
+
+        public Task<string> LoginUser(LoginDto loginDto)
+        {
+            return _userRepo.LoginUser(loginDto.Email, loginDto.Password);
+        }
     }
 }
