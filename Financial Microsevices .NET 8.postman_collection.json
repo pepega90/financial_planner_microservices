@@ -71,6 +71,16 @@
 				{
 					"name": "Get Wallet By User Id",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmODcxMmUyNS00OTA0LTQ5ZmQtYWQyZS0xMGNjNmZlZTA4ZDIiLCJ1bmlxdWVfbmFtZSI6ImRpa2hhIiwibmJmIjoxNzI3NTEzMDQwLCJleHAiOjE3MzAxMDUwNDAsImlhdCI6MTcyNzUxMzA0MCwiaXNzIjoiVXNlclNlcnZpY2UuSXNzdWVyIiwiYXVkIjoiVXNlclNlcnZpY2UuQXVkaWVuY2UifQ.VbT6EpvBHdaD0xd1WiC6fXphyMX49vPGq1xRs0HqiyQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -83,6 +93,26 @@
 							"path": [
 								"user",
 								"6603f1a9-aeb9-445a-a319-f3a46456876c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current Login User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7298/user/me",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7298",
+							"path": [
+								"user",
+								"me"
 							]
 						}
 					},
@@ -284,6 +314,40 @@
 		{
 			"name": "Transfer",
 			"item": []
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\": \"dikha@handsome.com\",\r\n    \"Password\": \"pepega90\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7298/auth/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7298",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
